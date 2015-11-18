@@ -22,9 +22,17 @@ class Kebab_case {
     public static function usage() {
         ob_start();
 ?>
-Return the value of text as kebab-case:
 
-  {exp:kebab_case text="What is kebab case?"}
+Return text formatted like a kebab:
+
+{exp:channel:entries}
+
+  <div class="{exp:kebab_case text='{some_text_field}'}">
+    {title} etc
+  </div>
+
+{/exp:channel:entries}
+
 <?php
         $buffer = ob_get_contents();
         ob_end_clean();
